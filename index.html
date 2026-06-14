@@ -184,7 +184,30 @@ No 😒
 function yesClicked(){
 
 document.getElementById("msg").innerHTML = `
-<h2>🥹❤️ YAYYYYYY ❤️🥹</h2>
+<h2>🥹🩵 YAYYYYYY 🩵🥹</h2>
+
+<p style="font-size:22px;line-height:1.8;">
+
+Ammuuuuu... 🥺🩵
+
+<br><br>
+
+Thank you for giving me another chance 🌷😚🫀
+
+<br><br>
+
+You just made my heart smile again 😩🩵
+
+<br><br>
+
+I promise I'll make you smile again 🫀😚
+
+<br><br>
+
+Forever grateful,
+Your idiot 🥱🫀🌷
+
+</p>
 
 <p style="font-size:22px;line-height:1.8;">
 
@@ -209,11 +232,11 @@ Your idiot 😅❤️
 </p>
 `;
 
-for(let i=0;i<60;i++){
+for(let i=0;i<150;i++){
 
 let emoji=document.createElement("div");
 
-emoji.innerHTML=["🎉","❤️","💖","🌹","✨"][Math.floor(Math.random()*5)];
+emoji.innerHTML=["🩵","💎","🦋","🌏","😚","🌷","🌕","🧿"][Math.floor(Math.random()*8)];
 
 emoji.style.position="fixed";
 emoji.style.left=Math.random()*100+"vw";
@@ -317,7 +340,16 @@ emoji.remove();
 function runAway(){
 
 const btn = document.getElementById("noBtn");
+const texts = [
+"Please 🥺",
+"Think Again 😭",
+"One More Chance ❤️",
+"Ammuuuuu 😢",
+"Don't Break My Heart 💔"
+];
 
+btn.innerHTML =
+texts[Math.floor(Math.random()*texts.length)];
 const maxX = window.innerWidth - btn.offsetWidth - 20;
 const maxY = window.innerHeight - btn.offsetHeight - 20;
 
