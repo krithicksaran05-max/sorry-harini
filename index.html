@@ -8,9 +8,10 @@
 <style>
 
 body{
+    
 margin:0;
 font-family:'Playfair Display',sans-serif;
-background:linear-gradient(135deg,#ffd6e8,#ffe6f2,#fff0f5);
+background:linear-gradient(135deg,#ffd6e8,#ffe6f5,#fff6ff);
 display:flex;
 justify-content:center;
 align-items:center;
@@ -19,60 +20,94 @@ text-align:center;
 overflow-x:hidden;
 }
 
+.blob{
+    position:fixed;
+    border-radius:50%;
+    filter:blur(90px);
+    z-index:-1;
+}
+
+.blob1{
+    width:250px;
+    height:250px;
+    background:#ff9ac9;
+    top:10%;
+    left:10%;
+}
+
+.blob2{
+    width:300px;
+    height:300px;
+    background:#a5d8ff;
+    bottom:10%;
+    right:10%;
+}
+    
 .card{
-background:rgba(255,255,255,0.75);
-backdrop-filter:blur(25px);
--webkit-backdrop-filter:blur(25px);
+    background: rgba(255,255,255,0.18);
 
-padding:45px;
-border-radius:35px;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
 
-border:1px solid rgba(255,255,255,0.5);
+    border: 1px solid rgba(255,255,255,0.35);
 
-box-shadow:
-0 8px 32px rgba(255,105,180,0.25),
-0 0 40px rgba(255,182,193,0.2);
+    border-radius: 40px;
 
-max-width:650px;
-margin:20px;
+    padding: 45px;
 
-animation:
-    letterOpen 1.5s ease,
-    floatCard 4s ease-in-out infinite 1.5s;
+    max-width: 650px;
 
-position:relative;
-overflow:hidden;
+    box-shadow:
+    0 8px 32px rgba(31,38,135,0.2),
+    inset 0 1px 1px rgba(255,255,255,0.6),
+    inset 0 -1px 1px rgba(255,255,255,0.2);
+
+    position: relative;
+    overflow: hidden;
+
+    animation: floatCard 4s ease-in-out infinite;
 }
 
 .card::before{
-content:'';
-position:absolute;
-top:-50%;
-left:-50%;
-width:200%;
-height:200%;
-opacity:0.6;
+    content:"";
 
-background:linear-gradient(
-45deg,
-transparent,
-rgba(255,255,255,0.4),
-transparent
-);
+    position:absolute;
 
-transform:rotate(25deg);
-animation:shine 6s linear infinite;
-}
+    top:-50%;
+    left:-50%;
 
-@keyframes shine{
-0%{
-transform:translateX(-100%) rotate(25deg);
-}
-100%{
-transform:translateX(100%) rotate(25deg);
-}
-}
+    width:200%;
+    height:200%;
 
+    background:
+    linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.35),
+        transparent
+    );
+
+    transform:rotate(25deg);
+
+    animation:glassShine 8s linear infinite;
+}
+    
+@keyframes glassShine{
+
+    0%{
+        transform:
+        translateX(-100%)
+        rotate(25deg);
+    }
+
+    100%{
+        transform:
+        translateX(100%)
+        rotate(25deg);
+    }
+
+}
+    
 @keyframes floatCard{
 0%{
 transform:translateY(0px);
@@ -306,7 +341,8 @@ opacity:0;
 
 </head>
 <body>
-
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
 <div class="card">
 
 <h1>🥺🫀 Dear <span class="special">Ammuuuuu</span>...</h1>
