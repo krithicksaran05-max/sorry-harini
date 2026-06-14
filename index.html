@@ -77,9 +77,30 @@ But losing your smile isn't. 🌹
     </button>
 
     <p id="msg"></p>
+    <div id="question" style="margin-top:20px;">
+  <h3>Will you forgive me? 🥺❤️</h3>
+
+  <button onclick="yesClicked()">Yes 💖</button>
+
+  <button id="noBtn" onmouseover="moveNoButton()">
+    No 😒
+  </button>
+</div>
 </div>
 
 <script>
+    function yesClicked(){
+    document.getElementById("msg").innerHTML =
+    "Yayyyy 🥳❤️<br><br>You made my day Harini 💖🌹<br><br>I promise to make you smile again 😘";
+}
+
+function moveButton(){
+    let btn = document.getElementById("noBtn");
+
+    btn.style.position = "absolute";
+    btn.style.left = Math.random() * 80 + "vw";
+    btn.style.top = Math.random() * 80 + "vh";
+}
 function showLove(){
     const music = document.getElementById("bgMusic");
 music.play();
