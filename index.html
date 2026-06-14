@@ -95,11 +95,40 @@ But losing your smile isn't. 🌹
 }
 
 function moveButton(){
-    let btn = document.getElementById("noBtn");
 
-    btn.style.position = "absolute";
-    btn.style.left = Math.random() * 80 + "vw";
-    btn.style.top = Math.random() * 80 + "vh";
+    document.body.innerHTML = `
+    <div style="
+        height:100vh;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        font-family:Arial;
+        background:#ffe6ea;
+        text-align:center;
+    ">
+        <h1 style="font-size:70px;">😭💔</h1>
+
+        <h2>No ah...? 😭</h2>
+
+        <p style="font-size:22px;">
+            My heart is crying now... 💔<br><br>
+            Please press YES 😢🌹
+        </p>
+
+        <button onclick="location.reload()"
+        style="
+        padding:15px 30px;
+        border:none;
+        border-radius:30px;
+        background:#ff4d6d;
+        color:white;
+        font-size:18px;
+        cursor:pointer;">
+        Give Me Another Chance ❤️
+        </button>
+    </div>
+    `;
 }
 function showLove(){
     const music = document.getElementById("bgMusic");
