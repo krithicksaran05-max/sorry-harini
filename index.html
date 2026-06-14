@@ -59,7 +59,9 @@ box-shadow:
 max-width:650px;
 margin:20px;
 
-animation:floatCard 4s ease-in-out infinite;
+animation:
+    letterOpen 1.5s ease,
+    floatCard 4s ease-in-out infinite 1.5s;
 
 position:relative;
 overflow:hidden;
@@ -125,7 +127,18 @@ to{
 text-shadow:0 0 30px hotpink;
 }
 }
+@keyframes letterOpen{
+    0%{
+        opacity:0;
+        transform:perspective(1000px) rotateX(-20deg) scale(0.9);
+    }
 
+    100%{
+        opacity:1;
+        transform:perspective(1000px) rotateX(0deg) scale(1);
+    }
+}
+  
 h1{
 font-family:'Montserrat',sans-serif;
 font-size:2.8rem;
@@ -134,15 +147,19 @@ letter-spacing:2px;
 color:#ff4d6d;
 margin-bottom:20px;
 text-shadow:0 0 15px #ff4d6d;
-animation:glowText 2s infinite alternate;
+opacity:0;
+animation:letterOpen 1.5s ease forwards;
 }
 
 p{
-font-family:'Playfair Display',serif;
-font-size:20px;
-line-height:1.9;
-color:#444;
-animation:fadeIn 1.5s ease;
+    font-family:'Playfair Display',serif;
+    font-size:20px;
+    line-height:1.9;
+    color:#444;
+
+    opacity:0;
+    animation:fadeIn 2s ease forwards;
+    animation-delay:1.2s;
 }
 
 .special{
@@ -152,7 +169,58 @@ color:#ff4d6d;
 text-shadow:0 0 10px pink;
 animation:glowText 2s infinite alternate;
 }
+
+img{
+    border-radius:50%;
+
+    box-shadow:
+    0 0 20px pink,
+    0 0 40px hotpink,
+    0 0 60px rgba(255,105,180,0.5);
+
+    animation:pulse 2s infinite, glow 2s infinite;
+}
+
+img:hover{
+    transform:scale(1.08) rotate(2deg);
+    transition:all 0.4s ease;
+}
   
+@keyframes pulse{
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.05);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+  
+@keyframes glow{
+
+    0%{
+        box-shadow:
+        0 0 20px pink,
+        0 0 40px hotpink;
+    }
+
+    50%{
+        box-shadow:
+        0 0 40px pink,
+        0 0 80px hotpink;
+    }
+
+    100%{
+        box-shadow:
+        0 0 20px pink,
+        0 0 40px hotpink;
+    }
+
+}
 @keyframes glowText{
 from{
 text-shadow:0 0 10px #ff4d6d;
@@ -161,7 +229,24 @@ to{
 text-shadow:0 0 30px hotpink;
 }
 }
+.sparkle{
+    position:fixed;
+    pointer-events:none;
+    font-size:18px;
+    z-index:9999;
+    animation:sparkleFade 1s linear forwards;
+}
 
+@keyframes sparkleFade{
+    0%{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+    100%{
+        opacity:0;
+        transform:translateY(-30px) scale(0);
+    }
+}
 button{
     font-family:'Montserrat',sans-serif;
     padding:15px 32px;
@@ -498,8 +583,22 @@ if(music){
     music.play().catch(()=>{});
 }
 
-document.getElementById("msg").innerHTML = `
+const text = `
+🩵🫀Ammuuuu...
 
+Every moment without your smile feels incomplete,
+thangapatteyyyyyy... 😚🌏🫀
+
+🥺 I'm really sorry for hurting you...
+
+✨ Your smile is still my favorite thing in this world...
+
+🌷 Can we create one more happy memory together...?
+`;
+
+let i = 0;
+
+document.getElementById("msg").innerHTML = `
 <div style="display:flex;justify-content:center;">
 <img src="harini.jpg.jpeg"
 style="
@@ -514,29 +613,23 @@ animation:pulse 2s infinite, glow 2s infinite;
 
 <br>
 
-<h2 style="color:#ff4d6d;">❤️ Ammuuuuu ❤️</h2>
+<h2 style="color:#ff4d6d;">🩵 Ammuuuu 🫀🧿😚</h2>
 
-<p>
-🥺🩵 Every moment without your smile feels incomplete,
-thangapatteyyyyyy... 🌹❤️
-
-<br><br>
-
-😔💖 I'm really sorry for hurting you...
-
-<br><br>
-
-✨ Your smile is still my favorite thing in this world...
-
-<br><br>
-
-🌹❤️ Can we create one more happy memory together...?
-</p>
-
-</div>
-
-
+<p id="typingText"></p>
 `;
+
+const target = document.getElementById("typingText");
+
+const typing = setInterval(() => {
+
+if(i < text.length){
+    target.innerHTML += text.charAt(i);
+    i++;
+}else{
+    clearInterval(typing);
+}
+
+},40);
 
 for(let i=0;i<40;i++){
 
@@ -569,6 +662,25 @@ emoji.remove();
 
 }
 
+  document.addEventListener("mousemove",(e)=>{
+
+    const sparkle=document.createElement("div");
+
+    sparkle.className="sparkle";
+
+    sparkle.innerHTML=["✨","🩵","😚","🌷","🫀"][Math.floor(Math.random()*5)];
+
+    sparkle.style.left=e.pageX+"px";
+    sparkle.style.top=e.pageY+"px";
+
+    document.body.appendChild(sparkle);
+
+    setTimeout(()=>{
+        sparkle.remove();
+    },1000);
+
+});
+  
 </script>
 
 <audio id="bgMusic"  loop>
