@@ -81,7 +81,8 @@ But losing your smile isn't. 🌹
 
 <script>
 function showLove(){
-    document.getElementById("bgMusic").play();
+    const music = document.getElementById("bgMusic");
+music.play();
 
 document.getElementById("msg").innerHTML =
 "🥺❤️ Harini...<br><br>You mean a lot to me.<br><br>🌹 I'm really sorry...<br><br>Can we be okay again?";
@@ -118,7 +119,7 @@ emoji.remove();
 </script>
     
 <audio id="bgMusic" loop>
-  <source src="Gaandu Kannamma Vivek - Mervin Ku Karthik.mp3" type="audio/mpeg">
+  <source src="song.mp3" type="audio/mpeg">
 </audio>
     
 </body>
