@@ -164,9 +164,21 @@ function showLove(){
     const music = document.getElementById("bgMusic");
 music.play();
 
-document.getElementById("msg").innerHTML =
-"🥺❤️ Harini...<br><br>You mean a lot to me.<br><br>🌹 I'm really sorry...<br><br>Can we be okay again?";
+document.getElementById("msg").innerHTML = `
+<img src="harini.jpg"
+style="
+width:250px;
+border-radius:20px;
+box-shadow:0 0 20px pink;
+margin-top:15px;
+"><br><br>
 
+💖 Harini 💖<br><br>
+
+You mean a lot to me 🌹<br><br>
+
+I'm really sorry 🥺❤️
+`;
 for(let i=0;i<30;i++){
 
 let emoji = document.createElement("div");
