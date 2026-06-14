@@ -82,23 +82,37 @@ But losing your smile isn't. 🌹
 <script>
 function showLove(){
 
-const messages = [
-"🥺 Harini... please don't stay mad at me...",
-"🌹 Every minute without your smile feels wrong...",
-"💖 You're the best thing that happened to me...",
-"🐻 If I could go back, I would fix everything...",
-"✨ I miss talking to you...",
-"🥹 Your smile is my favorite notification...",
-"💕 Can I have one more chance?",
-"🌸 Life feels prettier when you're happy...",
-"❤️ I am really really sorry..."
-];
-
-let randomMessage =
-messages[Math.floor(Math.random() * messages.length)];
-
 document.getElementById("msg").innerHTML =
-randomMessage + "<br><br>🥺 Forgive me?";
+"🥺❤️ Harini...<br><br>You mean a lot to me.<br><br>🌹 I'm really sorry...<br><br>Can we be okay again?";
+
+for(let i=0;i<30;i++){
+
+let emoji = document.createElement("div");
+
+const items = ["❤️","💖","💕","🌹","✨","🥺"];
+
+emoji.innerHTML = items[Math.floor(Math.random()*items.length)];
+
+emoji.style.position = "fixed";
+emoji.style.left = Math.random()*100 + "vw";
+emoji.style.top = "100vh";
+emoji.style.fontSize = (20 + Math.random()*25) + "px";
+emoji.style.pointerEvents = "none";
+emoji.style.zIndex = "9999";
+emoji.style.transition = "all 4s linear";
+
+document.body.appendChild(emoji);
+
+setTimeout(()=>{
+emoji.style.top = "-100px";
+emoji.style.opacity = "0";
+},100);
+
+setTimeout(()=>{
+emoji.remove();
+},4000);
+
+}
 }
 </script>
 
