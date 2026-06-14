@@ -353,41 +353,41 @@ Your idiot 😅❤️
 </p>
 `;
 
-for(let i=0;i<50;i++){
+setInterval(() => {
 
-let emoji=document.createElement("div");
+let emoji = document.createElement("div");
 
-emoji.innerHTML=["🩵","💎","🦋","🌏","😚","🌷","🌕","🧿"][Math.floor(Math.random()*8)];
+const emojis = ["😚","🩵","🫀","🦋","🌷","🦚"];
 
-emoji.style.position="fixed";
-emoji.style.left=(Math.random()*100)+"vw";
-emoji.style.top="-50px";
-emoji.style.fontSize=(15+Math.random()*30)+"px";
-emoji.style.pointerEvents="none";
-emoji.style.zIndex="9999";
+emoji.innerHTML = emojis[Math.floor(Math.random()*emojis.length)];
 
-const duration = 8 + Math.random()*6;
-
-emoji.animate([
-  { transform: "translateY(-50px)", opacity: 0 },
-  { transform: "translateY(110vh)", opacity: 1 }
-], {
-  duration: duration * 1000,
-  easing: "linear"
-});
+emoji.style.position = "fixed";
+emoji.style.left = Math.random()*100 + "vw";
+emoji.style.top = "-50px";
+emoji.style.fontSize = (15 + Math.random()*25) + "px";
+emoji.style.pointerEvents = "none";
+emoji.style.zIndex = "9999";
 
 document.body.appendChild(emoji);
 
-setTimeout(()=>{
-  emoji.remove();
-}, duration * 1000);
+const duration = 4000 + Math.random()*3000;
 
+emoji.animate(
+[
+{ transform:"translateY(-50px)", opacity:0 },
+{ transform:"translateY(110vh)", opacity:1 }
+],
+{
+duration:duration,
+easing:"linear"
+}
+);
 
 setTimeout(()=>{
 emoji.remove();
-},5000);
+}, duration);
 
-}
+}, 350);
 
 }
 
