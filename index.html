@@ -48,7 +48,22 @@ button{
 <body>
 
 <div class="card">
-    <h1>🥺 I'm Sorry ❤️</h1>
+    <h1>🥺 Harini...</h1>
+
+<p>
+Before you close this page... ❤️<br><br>
+
+Just give me 30 seconds. 🥺<br><br>
+
+I know I made mistakes.<br>
+I know I made you upset.<br><br>
+
+But if I could undo everything that hurt you,
+I would do it in a heartbeat. ❤️<br><br>
+
+Because losing an argument is okay...<br>
+But losing your smile isn't. 🌹
+</p>
 
     <p>
         I know you're upset with me...
@@ -58,7 +73,7 @@ button{
     </p>
 
     <button onclick="showLove()">
-        Tap Here ❤️
+        Open My Heart 💌
     </button>
 
     <p id="msg"></p>
@@ -66,8 +81,24 @@ button{
 
 <script>
 function showLove(){
-    document.getElementById("msg").innerHTML =
-    "You are my favorite person ❤️<br><br>I am really sorry 🥺<br><br>Can we be okay again? 🌹";
+
+const messages = [
+"🥺 Harini... please don't stay mad at me...",
+"🌹 Every minute without your smile feels wrong...",
+"💖 You're the best thing that happened to me...",
+"🐻 If I could go back, I would fix everything...",
+"✨ I miss talking to you...",
+"🥹 Your smile is my favorite notification...",
+"💕 Can I have one more chance?",
+"🌸 Life feels prettier when you're happy...",
+"❤️ I am really really sorry..."
+];
+
+let randomMessage =
+messages[Math.floor(Math.random() * messages.length)];
+
+document.getElementById("msg").innerHTML =
+randomMessage + "<br><br>🥺 Forgive me?";
 }
 </script>
 
