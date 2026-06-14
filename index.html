@@ -389,6 +389,46 @@ No 😒
 
 function yesClicked(){
 
+    if(navigator.vibrate){
+    navigator.vibrate([200,100,200,100,400]);
+}
+    
+    for(let i=0;i<100;i++){
+
+    let confetti=document.createElement("div");
+
+    confetti.innerHTML=["💖","💕","💗","🌸","✨","💝","🩷"][Math.floor(Math.random()*7)];
+
+    confetti.style.position="fixed";
+    confetti.style.left="50%";
+    confetti.style.top="50%";
+    confetti.style.fontSize=(20+Math.random()*25)+"px";
+    confetti.style.pointerEvents="none";
+    confetti.style.zIndex="99999";
+
+    document.body.appendChild(confetti);
+
+    let x=(Math.random()-0.5)*1000;
+    let y=(Math.random()-0.5)*800;
+
+    confetti.animate([
+        {
+            transform:"translate(0,0) scale(1)",
+            opacity:1
+        },
+        {
+            transform:`translate(${x}px,${y}px) rotate(${Math.random()*720}deg) scale(0.5)`,
+            opacity:0
+        }
+    ],{
+        duration:2500,
+        easing:"cubic-bezier(.17,.67,.83,.67)"
+    });
+
+    setTimeout(()=>{
+        confetti.remove();
+    },2500);
+}
 document.getElementById("msg").innerHTML = `
 <h2>🥹🩵 YAYYYYYY 🩵🥹</h2>
 
@@ -576,6 +616,10 @@ btn.style.top = Math.random() * maxY + "px";
 }
 
 function showLove(){
+
+if(navigator.vibrate){
+    navigator.vibrate([100,50,100]);
+}
 
 const music=document.getElementById("bgMusic");
 
