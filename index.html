@@ -232,25 +232,35 @@ Your idiot 😅❤️
 </p>
 `;
 
-for(let i=0;i<150;i++){
+for(let i=0;i<50;i++){
 
 let emoji=document.createElement("div");
 
 emoji.innerHTML=["🩵","💎","🦋","🌏","😚","🌷","🌕","🧿"][Math.floor(Math.random()*8)];
 
 emoji.style.position="fixed";
-emoji.style.left=Math.random()*100+"vw";
+emoji.style.left=(Math.random()*100)+"vw";
 emoji.style.top="-50px";
-emoji.style.fontSize=(20+Math.random()*30)+"px";
-emoji.style.transition="all 5s linear";
+emoji.style.fontSize=(15+Math.random()*30)+"px";
 emoji.style.pointerEvents="none";
+emoji.style.zIndex="9999";
+
+const duration = 8 + Math.random()*6;
+
+emoji.animate([
+  { transform: "translateY(-50px)", opacity: 0 },
+  { transform: "translateY(110vh)", opacity: 1 }
+], {
+  duration: duration * 1000,
+  easing: "linear"
+});
 
 document.body.appendChild(emoji);
 
 setTimeout(()=>{
-emoji.style.top="110vh";
-emoji.style.opacity="0";
-},100);
+  emoji.remove();
+}, duration * 1000);
+
 
 setTimeout(()=>{
 emoji.remove();
