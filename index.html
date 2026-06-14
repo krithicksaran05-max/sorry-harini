@@ -1,122 +1,198 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Sorry ❤️</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Ammuuuuu ❤️</title>
 
 <style>
+
 body{
-    margin:0;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
-    font-family:Arial,sans-serif;
-    text-align:center;
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+text-align:center;
+overflow-x:hidden;
 }
 
 .card{
-    background:white;
-    padding:40px;
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.2);
-    max-width:500px;
+background:white;
+padding:35px;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+max-width:550px;
+margin:20px;
 }
 
 h1{
-    color:#ff4d6d;
+color:#ff4d6d;
 }
 
 button{
-    padding:12px 25px;
-    border:none;
-    border-radius:30px;
-    background:#ff4d6d;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:#ff4d6d;
+color:white;
+font-size:16px;
+cursor:pointer;
+margin:5px;
 }
 
 #msg{
-    margin-top:20px;
-    font-size:18px;
-    color:#444;
+margin-top:20px;
+font-size:18px;
+line-height:1.8;
 }
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.05);}
+100%{transform:scale(1);}
+}
+
 </style>
 
 </head>
 <body>
 
 <div class="card">
-    <h1>🥺 Harini...</h1>
+
+<h1>🥺 Dear Ammuuuuu...</h1>
 
 <p>
-Before you close this page... ❤️<br><br>
 
-Just give me 30 seconds. 🥺<br><br>
+Every moment without your smile feels incomplete,
+thangapatteyyyyyy... 🥺🩵
 
-I know I made mistakes.<br>
-I know I made you upset.<br><br>
+<br><br>
 
-But if I could undo everything that hurt you,
-I would do it in a heartbeat. ❤️<br><br>
+I know I made mistakes...
 
-Because losing an argument is okay...<br>
-But losing your smile isn't. 🌹
+<br><br>
+
+I'm really sorry for hurting you... 😔💖
+
+<br><br>
+
+Can you give me one more chance...? 🌹❤️
+
 </p>
 
-    <p>
-        I know you're upset with me...
-        <br><br>
-        But trust me,
-        hurting you was never my intention.
-    </p>
+<button onclick="showLove()">
+💌 Open My Heart
+</button>
 
-    <button onclick="showLove()">
-        Open My Heart 💌
-    </button>
+<p id="msg"></p>
 
-    <p id="msg"></p>
-    <div id="question" style="margin-top:20px;">
-  <h3>Will you forgive me? 🥺❤️</h3>
+<div style="margin-top:20px;">
 
-  <button onclick="showlove()">Yes 💖</button>
+<h3>Will you forgive me? 🥺❤️</h3>
 
-  <button id="noBtn" onclick="moveButton()">
-    No 😒
-  </button>
+<button onclick="yesClicked()">
+Yes 💖
+</button>
+
+<button onclick="moveButton()">
+No 😒
+</button>
+
 </div>
+
 </div>
 
 <script>
-    function yesClicked(){
-    document.getElementById("msg").innerHTML =
-    "Yayyyy 🥳❤️<br><br>You made my day Harini 💖🌹<br><br>I promise to make you smile again 😘";
+
+function yesClicked(){
+
+document.getElementById("msg").innerHTML = `
+<h2>🥹❤️ YAYYYYYY ❤️🥹</h2>
+
+<p style="font-size:22px;line-height:1.8;">
+
+💖 You just made my heart smile again 🌹
+
+<br><br>
+
+Ammuuuuu...
+
+<br><br>
+
+🥺🩵 Thank you for giving me another chance...
+
+<br><br>
+
+❤️ Forever grateful,
+
+<br><br>
+
+Your idiot 😅❤️
+
+</p>
+`;
+
+for(let i=0;i<60;i++){
+
+let emoji=document.createElement("div");
+
+emoji.innerHTML=["🎉","❤️","💖","🌹","✨"][Math.floor(Math.random()*5)];
+
+emoji.style.position="fixed";
+emoji.style.left=Math.random()*100+"vw";
+emoji.style.top="-50px";
+emoji.style.fontSize=(20+Math.random()*30)+"px";
+emoji.style.transition="all 5s linear";
+emoji.style.pointerEvents="none";
+
+document.body.appendChild(emoji);
+
+setTimeout(()=>{
+emoji.style.top="110vh";
+emoji.style.opacity="0";
+},100);
+
+setTimeout(()=>{
+emoji.remove();
+},5000);
+
+}
+
 }
 
 function moveButton(){
 
 document.body.innerHTML = `
-<div id="cryPage" style="
+<div style="
 height:100vh;
-overflow:hidden;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-font-family:Arial;
 background:#ffe6ea;
+font-family:Arial;
 text-align:center;
-position:relative;
 ">
 
-<h1 style="font-size:80px;">😭💔</h1>
+<h1 style="font-size:90px;">😭💔</h1>
 
-<h2>No ah...? 😭</h2>
+<h2>No ah...? 🥺</h2>
 
 <p style="font-size:22px;">
-My heart is crying now... 💔<br><br>
+
+Ammuuuuu...
+
+<br><br>
+
+My heart is crying now... 💔
+
+<br><br>
+
 Please press YES 😢🌹
+
 </p>
 
 <button onclick="location.reload()"
@@ -134,11 +210,13 @@ Give Me Another Chance ❤️
 </div>
 `;
 
-for(let i=0;i<50;i++){
+for(let i=0;i<60;i++){
 
 let emoji=document.createElement("div");
 
-emoji.innerHTML=["😭","💔","🥺","😢"][Math.floor(Math.random()*4)];
+const items=["😭","💔","🥺","😢"];
+
+emoji.innerHTML=items[Math.floor(Math.random()*4)];
 
 emoji.style.position="fixed";
 emoji.style.left=Math.random()*100+"vw";
@@ -159,41 +237,72 @@ emoji.remove();
 },5000);
 
 }
+
 }
+
 function showLove(){
-    const music = document.getElementById("bgMusic");
-music.play();
 
-document.getElementById("msg").innerHTML =
-'<img src="harinijpg.jpeg" style="width:250px;border-radius:20px;box-shadow:0 0 20px pink;margin-top:15px;"><br><br>❤️ Harini ❤️<br><br>You mean a lot to me 🌹<br><br>I\'m really sorry 🥺❤️';
+const music=document.getElementById("bgMusic");
 
-💖 Harini 💖<br><br>
+if(music){
+music.play().catch(()=>{});
+}
 
-You mean a lot to me 🌹<br><br>
+document.getElementById("msg").innerHTML = `
 
-I'm really sorry 🥺❤️
+<img src="harinijpg.jpeg"
+style="
+width:250px;
+border-radius:20px;
+box-shadow:0 0 25px pink;
+animation:pulse 2s infinite;
+">
+
+<br><br>
+
+<h2 style="color:#ff4d6d;">❤️ Ammuuuuu ❤️</h2>
+
+<p>
+
+🥺🩵 Every moment without your smile feels incomplete,
+thangapatteyyyyyy... 🌹❤️
+
+<br><br>
+
+😔💖 I'm really sorry for hurting you...
+
+<br><br>
+
+✨ Your smile is still my favorite thing in this world...
+
+<br><br>
+
+🌹❤️ Can we create one more happy memory together...?
+
+</p>
 `;
-for(let i=0;i<30;i++){
 
-let emoji = document.createElement("div");
+for(let i=0;i<40;i++){
 
-const items = ["❤️","💖","💕","🌹","✨","🥺"];
+let emoji=document.createElement("div");
 
-emoji.innerHTML = items[Math.floor(Math.random()*items.length)];
+const items=["❤️","💖","💕","🌹","✨","🥺"];
 
-emoji.style.position = "fixed";
-emoji.style.left = Math.random()*100 + "vw";
-emoji.style.top = "100vh";
-emoji.style.fontSize = (20 + Math.random()*25) + "px";
-emoji.style.pointerEvents = "none";
-emoji.style.zIndex = "9999";
-emoji.style.transition = "all 4s linear";
+emoji.innerHTML=items[Math.floor(Math.random()*items.length)];
+
+emoji.style.position="fixed";
+emoji.style.left=Math.random()*100+"vw";
+emoji.style.top="100vh";
+emoji.style.fontSize=(20+Math.random()*25)+"px";
+emoji.style.pointerEvents="none";
+emoji.style.zIndex="9999";
+emoji.style.transition="all 4s linear";
 
 document.body.appendChild(emoji);
 
 setTimeout(()=>{
-emoji.style.top = "-100px";
-emoji.style.opacity = "0";
+emoji.style.top="-100px";
+emoji.style.opacity="0";
 },100);
 
 setTimeout(()=>{
@@ -201,12 +310,14 @@ emoji.remove();
 },4000);
 
 }
+
 }
+
 </script>
-    
+
 <audio id="bgMusic" loop>
-  <source src="song.mp3" type="audio/mpeg">
+<source src="song.mp3" type="audio/mpeg">
 </audio>
-    
+
 </body>
 </html>
